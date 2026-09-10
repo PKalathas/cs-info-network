@@ -42,7 +42,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Variables",
                         description:
-                            "Named locations used to store and manipulate data in a program."
+                            "Named locations used to store and manipulate data in a program.",
+                        image: "imgs/variables-example.png"
                     }
                 },
 
@@ -52,7 +53,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Functions",
                         description:
-                            "Reusable blocks of code that perform a particular task."
+                            "Reusable blocks of code that perform a particular task.",
+                        image: "imgs/function-example.png"
                     }
                 },
 
@@ -62,7 +64,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Loops",
                         description:
-                            "Control structures that allow code to be executed repeatedly."
+                            "Control structures that allow code to be executed repeatedly.",
+                        image: "imgs/loop-example.png"
                     }
                 },
 
@@ -72,7 +75,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Conditionals",
                         description:
-                            "Control structures that allow code to be executed based on certain conditions."
+                            "Control structures that allow code to be executed based on certain conditions.",
+                        image: "imgs/conditional-example.png"
                     }
                 },
 
@@ -82,7 +86,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Code",
                         description:
-                            "Instructions written in a programming language that can be executed by a computer."
+                            "Instructions written in a programming language that can be executed by a computer.",
+                        image: "imgs/code-examples-2.png"
                     }
                 },
 
