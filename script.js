@@ -174,7 +174,7 @@ const cy = cytoscape({
                         level: 2,
                         label: "Arrays",
                         description:
-                            "A collection of elements identified by index or key. Simply known as an ordered list.",
+                            "A collection of elements identified by index or key. Or simply known as an ordered list.",
                         image: "imgs/array-example.png"
                     }
                 },
