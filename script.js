@@ -174,7 +174,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Arrays",
                         description:
-                            "A collection of elements identified by index or key."
+                            "A collection of elements identified by index or key. Simply known as an ordered list.",
+                        image: "imgs/array-example.png"
                     }
                 },
 
@@ -184,7 +185,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Queues",
                         description:
-                            "A collection of elements that follows the First-In-First-Out (FIFO) principle."
+                            "A collection of elements that follows the First-In-First-Out (FIFO) principle. Like the queue at an amusement park.",
+                        image: "imgs/queue-example.png"
                     }
                 },
 
@@ -194,7 +196,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Stacks",
                         description:
-                            "A collection of elements that follows the Last-In-First-Out (LIFO) principle."
+                            "A collection of elements that follows the Last-In-First-Out (LIFO) principle. Like a stack of plates.",
+                        image: "imgs/stack-example.png"
                     }
                 },
 
@@ -204,7 +207,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Linked Lists",
                         description:
-                            "A collection of elements where each element points to the next element in the sequence."
+                            "A collection of elements where each element contains a payload as well as the location of the next element in the sequence.",
+                        image: "imgs/linkedlist-example.png"
                     }
                 },
 
@@ -214,7 +218,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Trees",
                         description:
-                            "A hierarchical data structure consisting of nodes connected by edges."
+                            "A hierarchical data structure consisting of nodes connected by edges. When visualized, it resembles an upside-down tree.",
+                        image: "imgs/tree-example.png"
                     }
                 },
 
@@ -224,7 +229,9 @@ const cy = cytoscape({
                         level: 2,
                         label: "Graphs",
                         description:
-                            "A collection of nodes connected by edges."
+                            "A collection of nodes connected by edges. This website is an example of a graph.",
+                        image: "imgs/graph-example.png"
+
                     }
                 },
 
@@ -555,7 +562,8 @@ const cy = cytoscape({
             data: {
                 id: "programming-data-structures",
                 source: "programming",
-                target: "data-structures"
+                target: "data-structures",
+                relationship: "is a part of"
             }
         },
 
@@ -563,7 +571,8 @@ const cy = cytoscape({
             data: {
                 id: "data-structures-algorithms",
                 source: "data-structures",
-                target: "algorithms"
+                target: "algorithms",
+                relationship: "is a part of"
             }
         },
 
@@ -571,7 +580,8 @@ const cy = cytoscape({
             data: {
                 id: "algorithms-ai",
                 source: "algorithms",
-                target: "artificial-intelligence"
+                target: "artificial-intelligence",
+                relationship: "is a part of"
             }
         },
 
