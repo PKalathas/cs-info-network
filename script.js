@@ -2,6 +2,12 @@
 // By: Enrique Lopez, Paris Kalathas
 // --------------------------------------
 
+// --------------------------------
+//
+// TO-DO: Add ```Hardware ``` nodes (level 1?)
+//
+// ---------------------------------
+
 const cy = cytoscape({
 
     container: document.getElementById("cy"),
@@ -42,7 +48,7 @@ const cy = cytoscape({
                         level: 2,
                         label: "Variables",
                         description:
-                            "Named locations used to store and manipulate data in a program.",
+                            "Named memory locations used to store and manipulate data in a program.",
                         image: "imgs/variables-example.png"
                     }
                 },
@@ -53,8 +59,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Functions",
                         description:
-                            "Reusable blocks of code that perform a particular task.",
-                        image: "imgs/function-example.png"
+                            "Functions are reusable blocks of code that perform a particular task repeatedly. The example below shows a function that adds two numbers together and returns the result.",
+                        image: "imgs/code-example-add-2.png"
                     }
                 },
 
@@ -86,8 +92,8 @@ const cy = cytoscape({
                         level: 2,
                         label: "Code",
                         description:
-                            "Instructions written in a programming language that can be executed by a computer.",
-                        image: "imgs/code-examples-2.png"
+                            "Instructions written in a programming language that can be executed by a computer. Code is written for people to read and understand. It is either compiled or interpreted into a language that the computer can understand, such as binary.",
+                        image: "imgs/code-example-add-2.png"
                     }
                 },
 
@@ -100,6 +106,26 @@ const cy = cytoscape({
                             "Different approaches to structuring and organizing code in programming."
                     }
                 },
+
+        {
+            data: {
+                id: "hardware",
+                level: 1,
+                label: "Hardware",
+                description:
+                    "TO-DO: Fill"
+            }
+        },
+
+        {
+            data: {
+                id: "mathematics",
+                level: 1,
+                label: "Mathematics",
+                description:
+                    "TO-DO: Fill"
+            }
+        },
 
         {
             data: {
@@ -550,6 +576,15 @@ const cy = cytoscape({
                 relationship: "contains"
             }
         },
+
+        {
+            data: {
+                id: "programming-artificial-intelligence",
+                source: "programming",
+                target: "artificial-intelligence",
+                relationship: "is a part of"
+            }
+        },
         /*
         {
             data: {
@@ -634,8 +669,6 @@ const cy = cytoscape({
             style: {
                 "width": 2,
                 "line-color": "#aaa",
-                "target-arrow-color": "#aaa",
-                "target-arrow-shape": "triangle",
                 "curve-style": "bezier"
             }
         },
@@ -688,14 +721,77 @@ const cy = cytoscape({
     // Initial layout
     // ----------------------------------
 
+    /*
     layout: {
-        name: "cose",
+        name: "preset",
         directed: true,
         roots: ["computer-science"],
         spacingFactor: 1.5,
         padding: 50
     }
+        */
 });
+
+// ----------------------------------
+// Node layout
+// To do: make a function instead of hardcoding positions
+// --------------------------------
+
+function applyCustomLayout() {
+    const positions = {
+    // Level 0
+    "computer-science": { x: 500, y: 500 },
+        // Level 1
+        "programming": { x: 300, y: 500 }, 
+            // Level 2
+            "variables": { x: 100, y: 200 },
+            "functions": { x: 100, y: 300 },
+            "loops": { x: 100, y: 400 },
+            "conditionals": { x: 100, y: 600 },
+            "code": { x: 100, y: 700 },
+            "programming_paradigms": { x: 100, y: 800 },
+        // Level 1
+        "algorithms": { x: 700, y: 500 },
+            // Level 2
+            "sorting": { x: 900, y: 300 },
+            "searching": { x: 900, y: 400 },
+            "graph": { x: 900, y: 500 },
+            "string": { x: 900, y: 600 },
+            "optimization": { x: 900, y: 700 },
+        // Level 1
+        "data-structures": { x: 500, y: 200 },
+            // Level 2
+            "arrays": { x: 200, y: 0 },
+            "queues": { x: 300, y: 0 },
+            "stacks": { x: 400, y: 0 },
+            "linkedlist": { x: 650, y: 0 },
+            "trees": { x: 750, y: 0 },
+            "graphs": { x: 850, y: 0 },
+        // Level 1
+        "artificial-intelligence": { x: 500, y: 800 },
+            // Level 2
+            "machine-learning": { x: 300, y: 1000 },
+            "robotics": { x: 400, y: 1000},
+            "computer-vision": { x: 500, y: 1000 },
+            "natural-language-processing": { x: 600, y: 1000 },
+            "generative-ai": { x: 700, y: 1000 },
+        // Level 1
+        "hardware": { x: 1300, y: 300 },
+        // Level 1
+        "mathematics": { x: 1300, y: 500 }
+    };
+
+    cy.nodes().forEach(node => {
+
+        const pos = positions[node.id()];
+        if (pos) {
+            node.position(pos);
+        }
+    });
+}
+
+applyCustomLayout(cy);
+
 
 
 // --------------------------------------
